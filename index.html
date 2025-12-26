@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+    <!-- navbar started -->
+    <div class="navbar">
+        <div class="logo">
+            <h2>QRGenX</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#generator">Generator</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+
+    <!-- navbar ended -->
+
+    <!-- home page started -->
+    <section id="home">
+        <div class="home">
+            <div class="heading">
+                <h1>Welcome to QRGenX</h1>
+                <p>Your one-stop solution for generating QR codes effortlessly!</p>
+            </div>
+            <img src="../Images/homepage (2).jpg" alt="QR Code Generator">
+
+
+        </div>
+    </section>
+    <!-- home page ended -->
+
+    <!-- generator section started -->
+    <section id="generator">
+        <div class="bc">
+            <!-- only for background color -->
+            <div class="container">
+                <div class="btn">
+                    <button onclick="showSection('textSection', this)" class="tab-btn txt active">Text</button>
+                    <button onclick="showSection('websiteSection', this)" class="tab-btn web">Website</button>
+                    <button onclick="showSection('imageSection', this)" class="tab-btn img">Image</button>
+                </div>
+
+
+                <!-- Text QR Code Section -->
+                <section id="textSection">
+                    <h2>Enter your Text</h2>
+                    <textarea id="qrText"></textarea>
+                    <div id="imgBox">
+                        <img id="textQRImage" src="" alt="QR Code">
+                    </div>
+                    <button onclick="generateTextQR()" class="left">Generate QR
+                        Code</button>
+
+                    <button onclick="deleteQR('textQRImage', 'qrText')" class="right">Delete QR Code</button>
+                    <button onclick="navigator.share({ url: window.location.href })" class="left">Share QR code</button>
+                </section>
+
+
+                <!-- Website QR Code Section -->
+                <section id="websiteSection" style="display: none;">
+                    <h2>Enter Your URL</h2>
+                    <input type="text" id="websiteInput" placeholder="Enter website URL">
+                    <br>
+                    <div id="imgBox">
+                        <img id="websiteQRImage" src="" alt="QR Code">
+                    </div>
+                    <button onclick="generateWebsiteQR()">Generate QR
+                        Code</button>
+
+                    <button onclick="deleteQR('websiteQRImage', 'websiteInput')">Delete QR Code</button>
+                    <button onclick="navigator.share({ url: window.location.href })">Share QR code</button>
+                </section>
+
+
+                <!-- Image QR Code Section -->
+                <section id="imageSection" style="display: none;">
+                    <h2>Upload Image</h2>
+                    <input type="file" id="imageInput">
+                    <br>
+                    <div id="imgBox">
+                        <img id="imageQRImage" src="" alt="QR Code">
+                    </div>
+                    <button onclick="generateImageQR()">Generate QR
+                        Code</button>
+                    <button onclick="navigator.share({ url: window.location.href })">Share QR code</button>
+
+                    <button onclick="deleteQR('imageQRImage', 'imageInput')">Delete QR Code</button>
+                </section>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- generator section ended -->
+
+
+    <!-- features section stared -->
+    <section id="features">
+        <div class="features">
+            <h2>Features of QRGenX</h2>
+            <div class="para">
+                <p>Easy to use interface for generating QR codes.</p>
+                <p>Supports text, website URLs, and image uploads.</p>
+                <p>Instant QR code generation with a single click.</p>
+                <p>Options to share or delete generated QR codes.</p>
+                <p>Responsive design for seamless experience on all devices.</p>
+                <p>No Need to Signup and Login.</p>
+            </div>
+        </div>
+    </section>
+    <!-- features section ended -->
+
+
+    <!-- about section started -->
+    <section id="about">
+        <div class="about">
+            <h2>About QRGenX</h2>
+            <p>QRGenX is a user-friendly QR code generator designed to simplify the process of creating QR codes for
+                various purposes. Whether you want to share text, website links, or images, QRGenX provides an intuitive
+                interface that allows you to generate QR codes quickly and easily. With features like instant
+                generation, sharing options, and a responsive design, QRGenX is the perfect tool for individuals and
+                businesses looking to leverage the power of QR codes without the hassle of signing up or logging in.
+                This QR Code Generator is designed to provide a simple and reliable way to create QR codes for everyday,
+                academic, and professional use. It supports multiple QR types and customization options to meet
+                different practical requirements. The tool uses a backend API to process input data and generate
+                accurate QR codes in real time. The focus is on delivering consistent results, clean output, and a
+                smooth user experience across devices. It is suitable for use in websites, documents, product labels,
+                event materials, and other real-worldapplications where quick and dependable QR code generation is
+                required.</p>
+        </div>
+    </section>
+    <!-- about section ended -->
+
+    <!-- contact section started -->
+    <section id="contact">
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>Have any questions or feedback? Reach out to us!</p>
+            <form id="form" action="https://formsubmit.co/surajk71621@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="10" cols="60" required></textarea>
+                <input type="hidden" name="_subject" value="New Contact Message">
+                <input type="hidden" name="_captcha" value="false">
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    <!-- contact section ended -->
+
+    <script src="../JS/script.js"></script>
+
+</body>
+
+</html>
